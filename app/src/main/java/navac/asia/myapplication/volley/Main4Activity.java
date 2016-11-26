@@ -3,6 +3,7 @@ package navac.asia.myapplication.volley;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -67,6 +68,8 @@ public class Main4Activity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d(TAG, "onResponse() called with: response = [" + response + "]");
+
+                Toast.makeText(Main4Activity.this, "this a seconds toast", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
