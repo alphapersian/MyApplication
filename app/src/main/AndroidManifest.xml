@@ -15,12 +15,28 @@
         <activity
             android:name=".recyclerview.Main2Activity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".spinner.Main3Activity">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".spinner.Main3Activity" />
         <activity android:name=".volley.Main4Activity">
 
+        </activity>
+
+        <receiver android:name=".MyWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/my_widget_info" />
+        </receiver>
+
+        <activity android:name=".MyWidgetConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".binding.Main5Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
