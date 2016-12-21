@@ -3,6 +3,7 @@
     package="navac.asia.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
         android:name=".volley.AppController"
@@ -17,9 +18,7 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".spinner.Main3Activity" />
-        <activity android:name=".volley.Main4Activity">
-
-        </activity>
+        <activity android:name=".volley.Main4Activity" />
 
         <receiver android:name=".MyWidget">
             <intent-filter>
@@ -36,13 +35,48 @@
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
-        <activity android:name=".binding.Main5Activity">
+        <activity android:name=".binding.Main5Activity" />
+
+        <receiver android:name=".popupwindow.NewAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
+        </receiver>
+        <receiver android:name=".popupwindow.NewAppWidget2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget2_info" />
+        </receiver>
+
+        <activity
+            android:name=".keyboardevent.Main6Activity"
+            android:windowSoftInputMode="stateUnchanged|adjustResize" />
+        <activity
+            android:name=".keyboardevent.Main7Activity"
+            android:label="@string/title_activity_main7"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".adapterpattern.Main8Activity" />
+        <activity android:name=".bottomsheet.Main9Activity"></activity>
+        <activity android:name=".notification.Main10Activity">
+
+        </activity>
+        <activity android:name=".drawonlockscreen.Main11Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".drawonlockscreen.LockScreenTextService" /> //this
     </application>
 
 </manifest>
